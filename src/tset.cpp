@@ -12,7 +12,7 @@ TSet::TSet(int mp) : MaxPower(mp), BitField(MaxPower)
 }
 
 // конструктор копирования
-TSet::TSet(const TSet &s) : MaxPower(s.MaxPower), BitField(s)
+TSet::TSet(const TSet &s) : MaxPower(s.MaxPower), BitField(s.BitField)
 {
 }
 
@@ -23,6 +23,8 @@ TSet::TSet(const TBitField &bf) : MaxPower(bf.GetLength()), BitField(bf)
 
 TSet::operator TBitField()
 {
+	TBitField temp(this->BitField);
+	return temp;
 }
 
 int TSet::GetMaxPower(void) const // получить макс. к-во эл-тов
@@ -47,6 +49,7 @@ void TSet::DelElem(const int Elem) // исключение элемента мн
 
 TSet& TSet::operator=(const TSet &s) // присваивание
 {
+	return *this;
 }
 
 int TSet::operator==(const TSet &s) const // сравнение
@@ -61,22 +64,32 @@ int TSet::operator!=(const TSet &s) const // сравнение
 
 TSet TSet::operator+(const TSet &s) // объединение
 {
+	TSet temp(BitField | s.BitField);
+	return temp;
 }
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
+	InsElem(Elem);
+	return *this;
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
 {
+	DelElem(Elem);
+	return *this;
 }
 
 TSet TSet::operator*(const TSet &s) // пересечение
 {
+	TSet temp(BitField & s.BitField);
+	return temp;
 }
 
 TSet TSet::operator~(void) // дополнение
 {
+	TSet temp(~BitField);
+	return temp;
 }
 
 // перегрузка ввода/вывода

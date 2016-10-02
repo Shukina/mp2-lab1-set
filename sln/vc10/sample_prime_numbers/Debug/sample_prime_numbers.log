@@ -1,2 +1,4 @@
 ﻿  sample_prime_numbers.cpp
-LINK : fatal error LNK1104: не удается открыть файл "bitfield.lib"
+sample_prime_numbers.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  sample_prime_numbers.vcxproj -> D:\Projects\mp2-lab1-set\sln\vc10\Debug\sample_prime_numbers.exe
+  sample_prime_numbers.vcxproj -> D:\Projects\mp2-lab1-set\sln\vc10\Debug\sample_prime_numbers.pdb (Full PDB)

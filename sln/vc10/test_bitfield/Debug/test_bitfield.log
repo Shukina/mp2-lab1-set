@@ -2,4 +2,6 @@
   test_tbitfield.cpp
   test_main.cpp
   Создание кода...
-LINK : fatal error LNK1104: не удается открыть файл "bitfield.lib"
+test_main.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  test_bitfield.vcxproj -> D:\Projects\mp2-lab1-set\sln\vc10\Debug\test_bitfield.exe
+  test_bitfield.vcxproj -> D:\Projects\mp2-lab1-set\sln\vc10\Debug\test_bitfield.pdb (Full PDB)
