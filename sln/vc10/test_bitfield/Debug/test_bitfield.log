@@ -1,0 +1,5 @@
+﻿  test_tset.cpp
+  test_tbitfield.cpp
+  test_main.cpp
+  Создание кода...
+LINK : fatal error LNK1104: не удается открыть файл "bitfield.lib"

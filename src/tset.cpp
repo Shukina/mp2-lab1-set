@@ -7,17 +7,17 @@
 
 #include "tset.h"
 
-TSet::TSet(int mp) : BitField(-1)
+TSet::TSet(int mp) : MaxPower(mp), BitField(MaxPower)
 {
 }
 
 // конструктор копирования
-TSet::TSet(const TSet &s) : BitField(-1)
+TSet::TSet(const TSet &s) : MaxPower(s.MaxPower), BitField(s)
 {
 }
 
 // конструктор преобразования типа
-TSet::TSet(const TBitField &bf) : BitField(-1)
+TSet::TSet(const TBitField &bf) : MaxPower(bf.GetLength()), BitField(bf)
 {
 }
 
@@ -27,6 +27,7 @@ TSet::operator TBitField()
 
 int TSet::GetMaxPower(void) const // получить макс. к-во эл-тов
 {
+	return MaxPower;
 }
 
 int TSet::IsMember(const int Elem) const // элемент множества?
@@ -55,6 +56,7 @@ int TSet::operator==(const TSet &s) const // сравнение
 
 int TSet::operator!=(const TSet &s) const // сравнение
 {
+	return 0;
 }
 
 TSet TSet::operator+(const TSet &s) // объединение
@@ -81,8 +83,10 @@ TSet TSet::operator~(void) // дополнение
 
 istream &operator>>(istream &istr, TSet &s) // ввод
 {
+	return istr;
 }
 
 ostream& operator<<(ostream &ostr, const TSet &s) // вывод
 {
+	return ostr;
 }
