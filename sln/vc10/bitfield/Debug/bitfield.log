@@ -1,0 +1,5 @@
+﻿  tset.cpp
+  tbitfield.cpp
+  Создание кода...
+d:\projects\mp2-lab1-set\src\tset.cpp(112): warning C4700: использована неинициализированная локальная переменная "temp"
+  bitfield.vcxproj -> D:\Projects\mp2-lab1-set\sln\vc10\Debug\bitfield.lib
